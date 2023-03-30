@@ -10,13 +10,8 @@ body {
   font-family: 'Nunito', sans-serif;
   background-color: hsl(240, 23%, 97%);
   color: hsl(252, 30%, 17%);
-  overflow: hidden;
 }
 a {
     text-decoration: none;
     color: black;
-}
-.scroll {
-  height: 500px;
-  overflow: scroll;
 }
