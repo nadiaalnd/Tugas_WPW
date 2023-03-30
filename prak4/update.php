@@ -38,53 +38,62 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-  <h1 class="text-center">Edit Data Mahasiswa</h1>
-  <br><br>
-  <form class="container" action="" method="post">
-    <input type="hidden" name="id" value="<?= $mahasiswa['id']; ?>">
-    <div class="form-group">
-      <label for="nrp">NRP</label>
-      <input type="text" class="form-control" name="nrp" id="nrp" required value="<?= $mahasiswa["nrp"]; ?>">
+  <h1 class="text-center" style="margin-top:50px;">
+    <strong>Edit Data Mahasiswa</strong>
+  </h1>
+  <br>
+  <div class="container">
+    <div class="card">
+      <h5 class="card-header bg-dark"><a href="index.php" style="color:white">Kembali ke home</a></h5>
+      <div class="card-body">
+        <form class="container" action="" method="post">
+          <input type="hidden" name="id" value="<?= $mahasiswa['id']; ?>">
+          <div class="form-group">
+            <label for="nrp">NRP</label>
+            <input type="text" class="form-control" name="nrp" id="nrp" required value="<?= $mahasiswa["nrp"]; ?>">
+          </div>
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control" name="nama" id="nama" required value="<?= $mahasiswa["nama"]; ?>">
+          </div>
+          <div class="form-group">
+            <label for="jurusan">Jurusan</label>
+            <input type="text" class="form-control" name="jurusan" id="jurusan" required value="<?= $mahasiswa["jurusan"]; ?>">
+          </div>
+          <div class="form-group">
+            <label for="gender">Jenis Kelamin</label>
+            <select class="form-control" name="gender" id="gender" required>
+              <option value="" disabled>-- Pilih Jenis Kelamin --</option>
+              <option value="laki-laki" <?= ($mahasiswa['gender'] == "laki-laki") ? "selected" : ""; ?>>Laki-laki</option>
+              <option value="perempuan" <?= ($mahasiswa['gender'] == "perempuan") ? "selected" : ""; ?>>Perempuan</option>
+            </select>
+          </div>
+          <div class=" form-group">
+            <label for="email">Email mahasiswa</label>
+            <input type="email" class="form-control" name="email" id="email" required value="<?= $mahasiswa["email"]; ?>">
+          </div>
+          <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <textarea class="form-control" name="alamat" id="alamat" required><?= $mahasiswa["alamat"]; ?></textarea>
+          </div>
+          <div class="form-group">
+            <label for="no_hp">No Telepon</label>
+            <input type="text" class="form-control" name="no_hp" id="no_hp" required value="<?= $mahasiswa["no_hp"]; ?>">
+          </div>
+          <div class="form-group">
+            <label for="asal_sma">Asal SLTA</label>
+            <input type="text" class="form-control" name="asal_sma" id="asal_sma" required value="<?= $mahasiswa["asal_sma"]; ?>">
+          </div>
+          <div class="form-group">
+            <label for="matkul_fav">Mata Kuliah Favorit</label>
+            <input type="text" class="form-control" name="matkul_fav" id="matkul_fav" required value="<?= $mahasiswa["matkul_fav"]; ?>">
+          </div>
+          <br>
+          <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="nama">Nama</label>
-      <input type="text" class="form-control" name="nama" id="nama" required value="<?= $mahasiswa["nama"]; ?>">
-    </div>
-    <div class="form-group">
-      <label for="jurusan">Jurusan</label>
-      <input type="text" class="form-control" name="jurusan" id="jurusan" required value="<?= $mahasiswa["jurusan"]; ?>">
-    </div>
-    <div class="form-group">
-      <label for="gender">Jenis Kelamin</label>
-      <select class="form-control" name="gender" id="gender" required>
-        <option value="" disabled>-- Pilih Jenis Kelamin --</option>
-        <option value="laki-laki" <?= ($mahasiswa['gender'] == "laki-laki") ? "selected" : ""; ?>>Laki-laki</option>
-        <option value="perempuan" <?= ($mahasiswa['gender'] == "perempuan") ? "selected" : ""; ?>>Perempuan</option>
-      </select>
-    </div>
-    <div class=" form-group">
-      <label for="email">Email mahasiswa</label>
-      <input type="email" class="form-control" name="email" id="email" required value="<?= $mahasiswa["email"]; ?>">
-    </div>
-    <div class="form-group">
-      <label for="alamat">Alamat</label>
-      <textarea class="form-control" name="alamat" id="alamat" required><?= $mahasiswa["alamat"]; ?></textarea>
-    </div>
-    <div class="form-group">
-      <label for="no_hp">No Telepon</label>
-      <input type="text" class="form-control" name="no_hp" id="no_hp" required value="<?= $mahasiswa["no_hp"]; ?>">
-    </div>
-    <div class="form-group">
-      <label for="asal_sma">Asal SLTA</label>
-      <input type="text" class="form-control" name="asal_sma" id="asal_sma" required value="<?= $mahasiswa["asal_sma"]; ?>">
-    </div>
-    <div class="form-group">
-      <label for="matkul_fav">Mata Kuliah Favorit</label>
-      <input type="text" class="form-control" name="matkul_fav" id="matkul_fav" required value="<?= $mahasiswa["matkul_fav"]; ?>">
-    </div>
-    <br>
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
