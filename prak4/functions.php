@@ -1,7 +1,8 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "wpw");
 
-function query($query) {
+function query($query)
+{
   global $conn;
   $result = mysqli_query($conn, $query);
   $rows = [];
@@ -11,7 +12,8 @@ function query($query) {
   return $rows;
 }
 
-function add($data) {
+function add($data)
+{
   global $conn;
   $nrp = htmlspecialchars($data["nrp"]);
   $nama = htmlspecialchars($data["nama"]);
@@ -32,13 +34,15 @@ function add($data) {
   return mysqli_affected_rows($conn);
 }
 
-function delete($id) {
+function delete($id)
+{
   global $conn;
-  mysqli_query($conn,"DELETE FROM mahasiswa WHERE id = $id");
+  mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id");
   return mysqli_affected_rows($conn);
 }
 
-function update($data) {
+function update($data)
+{
   global $conn;
   $id = $data["id"];
   $nrp = htmlspecialchars($data["nrp"]);
