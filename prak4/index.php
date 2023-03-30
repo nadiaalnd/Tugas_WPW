@@ -18,6 +18,11 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
   <link rel="stylesheet" href="style.css">
   <!-- Title -->
   <title>Data Mahasiswa</title>
+  <style>
+    table {
+      border: 6px solid #eaeaea !important
+    }
+  </style>
 </head>
 
 <body>
@@ -28,18 +33,19 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
       </a>
     </div>
   </nav>
-  <div class="container" style="margin-top:70px;">
+  <div class="container" style="margin-top:100px;">
     <h1 class="text-center">
       <strong>Daftar Mahasiswa</strong>
     </h1>
-    <br><br>
+    <br>
     <!-- Button Create a New Data -->
     <a class="btn btn-primary" href="add.php" role="button"><i class="fas fa-plus"></i> Data</a>
+    <br>
     <div class="scroll">
       <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
         <table class="table table-hover table-bordered">
           <thead>
-            <tr>
+            <tr class="table-darks">
               <th scope="col">#</th>
               <th scope="col">NRP</th>
               <th scope="col">Nama</th>
@@ -121,7 +127,6 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
   function confirmEdit(id) {
     Swal.fire({
       title: 'Apakah Anda yakin?',
-      text: "Data yang diubah tidak dapat dikembalikan!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
